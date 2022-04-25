@@ -9,6 +9,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const pokedex = [
 
@@ -131,5 +133,26 @@ app.get("/", (req, res) => {
 app.get("/cadastro", (req, res) => {
   res.render("cadastro");
 });
+
+app.get("/:nome/detalhes", (req, res) => {
+  for(const pokemon of pokedex){
+    if(pokemon.nome == req.params.nome){
+      res.render("detalhes", {pokemon});
+    }}
+});
+
+app.post("/cadastro", (req, res) => {
+  let id = 0;
+  for(const pokemon of pokedex){
+    id++;
+    for(let i = 0; i < pokemon.evolucao.length; i++){
+      id++;
+    }
+  }
+  req.body.id = ++id;
+  pokedex.push(req.body);
+  res.redirect("/");
+});
+
 
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
