@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" href = "style.css">
+  <title>Home</title>
+</head>
+<body>
+  
+  <h1>Pokedex</h1>
+
+    <section>
+
+      <% pokedex.forEach((pokemon) => { %>
+
+    
+      <div>
+        
+        <img src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %>">      
+      
+        <h2><%= pokemon.nome %></h2> 
+
+        <p><%= pokemon.descricao %></p>
+        <p>Tipo: <%= pokemon.tipo %></p>
+        <p>Altura: <%= pokemon.altura %></p>
+        <p>Peso: <%= pokemon.peso %></p>
+        <p>Categoria: <%= pokemon.categoria %></p>
+        <p>Habilidade:<%= pokemon.habilidade %></p>
+      
+      </div>
+
+
+      <!-- Fazer botão de evolução:
+      Qual é a melhor aproximação?
+      - mostrar na tela todos os pokemons, e permitir a escolha de um deles quando selecionado;
+      - Aumentar a imagem, mostrar os detalhes, e apresentar o botao evolução;
+      - Botão evolução troca as sintaxes "pokemon.Anything" por "pokemon.evolucao.Anything";
+      - Trocas feita no JS -->
+
+      <!-- <div>
+        <button id = "button_evolve">Evolução</button>
+      </div> --> 
+
+    <% }) %>
+
+
+  </div>
+
+  <div>
+    <a href = "/cadastro">Cadastro</a>
+  </div>
+
+  <script href="/public/script.js"></script>
+</body>
+</html>

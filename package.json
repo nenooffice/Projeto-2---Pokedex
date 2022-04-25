@@ -1,0 +1,26 @@
+{
+  "name": "pokedex-mvc",
+  "version": "1.0.0",
+  "description": "Projeto 2 ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nenooffice/pokedex-mvc.git"
+  },
+  "author": "Eugenio Bufalo Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nenooffice/pokedex-mvc/issues"
+  },
+  "homepage": "https://github.com/nenooffice/pokedex-mvc#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
