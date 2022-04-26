@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+let message = "";
+
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -127,19 +129,18 @@ const pokedex = [
 //Rotas
 
 app.get("/", (req, res) => {
-  res.render("index", {pokedex});
+
+  setTimeout(() => {
+    message = "";
+  }, 1000);
+  
+  res.render("index", {pokedex, message});
 });
 
 app.get("/cadastro", (req, res) => {
-  res.render("cadastro");
+  res.render("cadastro", {message});
 });
 
-app.get("/:nome/detalhes", (req, res) => {
-  for(const pokemon of pokedex){
-    if(pokemon.nome == req.params.nome){
-      res.render("detalhes", {pokemon});
-    }}
-});
 
 app.post("/cadastro", (req, res) => {
   let id = 0;
@@ -151,7 +152,15 @@ app.post("/cadastro", (req, res) => {
   }
   req.body.id = ++id;
   pokedex.push(req.body);
+  message = `Pokemon cadastrado com sucesso`;
   res.redirect("/");
+});
+
+app.get("/:nome/detalhes", (req, res) => {
+  for(const pokemon of pokedex){
+    if(pokemon.nome == req.params.nome){
+      res.render("detalhes", {pokemon});
+    }}
 });
 
 
