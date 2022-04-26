@@ -1,6 +1,11 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  scroll-behavior: smooth;
 }
 
 section#message {
@@ -15,10 +20,36 @@ section#message {
   text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
-
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+span#close:hover{
+  color: rgb(255, 0, 0);
+  transform: scale(1.5);
+}
+
+header {
+  background-color: rgb(187, 31, 31);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header h1{
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+
 }
 
 span#close {
@@ -27,7 +58,57 @@ span#close {
   transition: .3s;
 }
 
-span#close:hover{
-  color: rgb(255, 0, 0);
-  transform: scale(1.5);
+
+
+
+main {
+  margin: 0 10rem 0 10rem;
+}
+
+section#cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+section#cards div.card {
+  width: 20rem;
+  box-shadow: 5px 5px 5px 5px #00000015;
+  padding: 1rem;
+  margin: 3rem 0 5rem 0;
+}
+
+section#cards h2 {
+  width: 100%;
+  text-align: center;
+}
+
+section#cards div.card img {
+  width: 100%;
+}
+
+
+
+footer {
+    background-color: #dc0a2d;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: .3rem;
+}
+
+
+footer p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
 }

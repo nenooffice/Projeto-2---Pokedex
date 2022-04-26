@@ -9,18 +9,26 @@
   </head>
   <body>
     
-    
-    <h1>Pokedex</h1>
-    
-    <section>
+    <header>
+      <h1>Pokedex</h1>
+
+      <div id="cadastro">
+        <a href = "/cadastro">Cadastro</a>
+      </div>
       
-      <% pokedex.forEach((pokemon) => { %>
+    </header>
+    
+    <main>
+
+      <section id="cards">
         
-        
-        <div>
+        <% pokedex.forEach((pokemon) => { %>
           
-          <a href="<%= pokemon.nome %>/detalhes">
+          
+          <div class="card">
             
+            <a href="<%= pokemon.nome %>/detalhes">
+              
             <img src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %>">      
             
           </a>
@@ -32,9 +40,7 @@
           
         </div>
         
-        <div>
-          <a href = "/cadastro">Cadastro</a>
-        </div>
+      </main>
        
         <div>
           
@@ -43,7 +49,7 @@
                 <p><%= message %></p> <span id="close">&times;</span>
             </section>
          <% }  %>
-         
+
         </div>
 
         <footer>
