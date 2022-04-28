@@ -1,3 +1,5 @@
+/* Style Home */
+
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"); 
 
 * {
@@ -225,3 +227,106 @@ img {
   transform:perspective(800px)       rotateY(0deg);
   opacity:1;
 }
+
+/* Fim Stylus Home */
+
+/* Stylus Cadastro */
+
+section#page_cadastro {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+
+section#page_cadastro img {
+  width: 100%;
+}
+
+section#page_cadastro h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5rem;
+  color: rgb(109, 109, 109);
+}
+
+section#page_cadastro form {
+  width: 100%;
+}
+
+section#page_cadastro form input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  outline: none;
+  border: solid 2px rgb(197, 197, 197);
+  margin: 0 1rem 1rem 1rem;
+}
+
+section#page_cadastro form label {
+  margin: 1rem;
+  color: rgb(148, 148, 148);
+}
+
+section#page_cadastro form button {
+
+  font-family: inherit;
+  font-size: 20px;
+  background: rgb(237, 72, 60);
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+ }
+ 
+ button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+ }
+ 
+ button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+ }
+ 
+ button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+ }
+ 
+ button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+ }
+ 
+ button:hover span {
+  transform: translateX(5em);
+ }
+ 
+ button:active {
+  transform: scale(0.95);
+ }
+ 
+ @keyframes fly-1 {
+  from {
+   transform: translateY(0.1em);
+  }
+ 
+  to {
+   transform: translateY(-0.1em);
+  }
+ }
+
+@media (max-width: 400px) {
+  #page_cadastro{
+    flex-direction: column;
+  }
+}
+
+/* Fim Stylus Cadastro */
+
+/* Stylus Detalhes */
