@@ -7,18 +7,26 @@
     <link rel = "stylesheet" href = "/css/style.css">
     <title>Home</title>
   </head>
+  
   <body>
     
-    <header>
-      <h1>Pokedex</h1>
+    <main>
+
+      <header class="container">
+
+    <section id="showcase">
+      
+      <h1 class="title">Pokedex</h1>
+      
+    </section>
 
       <div id="cadastro">
         <a href = "/cadastro">Cadastro</a>
       </div>
       
     </header>
+
     
-    <main>
 
       <section id="cards">
         
@@ -26,38 +34,38 @@
           
           
           <div class="card">
-            
-            <a href="<%= pokemon.nome %>/detalhes">
               
-            <img src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %>">      
+              <a href="<%= pokemon.nome %>/detalhes">
+                
+              <img src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %>">      
+              
+              </a>    
+
+              </div>
+          
+        <% }) %>
             
-          </a>
+      </section>
+
+      
+      <div>
           
-          
-          
-          <% }) %>
-          
+        <% if(message != "") {  %>
+          <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+          </section>
+          <% }  %>
           
         </div>
         
       </main>
-       
-        <div>
-          
-          <% if(message != "") {  %>
-            <section id="message">
-                <p><%= message %></p> <span id="close">&times;</span>
-            </section>
-         <% }  %>
-
-        </div>
-
-        <footer>
+      
+      <footer>
           <p>
             < The future is blue /> <a href="https://blueedtech.com.br/" target="_blank"> BlueEdtech</a>
           </p>
-</footer>
-
+        </footer>
+        
 <script src="/js/script.js"></script>
 
 </body>

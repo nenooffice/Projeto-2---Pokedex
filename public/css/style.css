@@ -1,11 +1,16 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"); 
 
 * {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans JP', sans-serif;
   scroll-behavior: smooth;
+}
+
+main{
+  max-width: auto;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px - 37.59px);
 }
 
 section#message {
@@ -31,70 +36,137 @@ span#close:hover{
   transform: scale(1.5);
 }
 
-header {
-  background-color: rgb(187, 31, 31);
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-header h1{
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-
-}
-
 span#close {
   font-size: 2rem;
   cursor: pointer;
   transition: .3s;
 }
 
+header {
+  background-color: rgb(187, 31, 31);
+} 
 
-
-
-main {
-  margin: 0 10rem 0 10rem;
-}
-
-section#cards {
+header.container{
+  max-width: auto;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 5rem;
+  justify-content: space-between;
 }
 
-section#cards div.card {
-  width: 20rem;
-  box-shadow: 5px 5px 5px 5px #00000015;
-  padding: 1rem;
-  margin: 3rem 0 5rem 0;
+header h1{
+  color: rgb(255, 255, 255);
+  font-size: calc(100% + 5vmin);
+  height: 100%;
+} */
+
+#cadastro{
+  top: -10px;
+  font-size: 18px
 }
 
-section#cards h2 {
-  width: 100%;
-  text-align: center;
+/* Retirado de: uiverse.io by @namecho */
+header a,
+header a::after {
+ padding: 16px 20px;
+ font-size: calc(60% + 1vmin);
+ background: linear-gradient(45deg, transparent 5%, #f52121 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 5;
+ box-shadow: 6px 0px 0px #f3e51f;
+ outline: transparent;
+ position: relative;
 }
 
-section#cards div.card img {
-  width: 100%;
+header a::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
 }
 
+header a:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+/* Fim de: Retirado de: uiverse.io by @namecho */
 
 
 footer {
-    background-color: #dc0a2d;
-    padding: 3rem;
     display: flex;
-    flex-wrap: wrap;
+    background-color: #dc0a2d;
+    padding: 2rem;
     justify-content: center;
 }
 
@@ -106,9 +178,50 @@ footer p {
     padding: .3rem;
 }
 
-
 footer p a{
     text-decoration: none;
     color: #fff;
     font-weight: 600;
+}
+
+img{
+  width: 70%;
+}
+
+#cards{
+  display: flex;
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+@media (max-width: 400px) {
+  #cards{
+    flex-direction: column;
+  }
+}
+
+img {
+  object-fit:cover;
+  
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
+.card {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+}
+.card:hover img {
+  opacity:0.3;
+}
+.card img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
 }
